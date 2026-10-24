@@ -1,0 +1,7 @@
+path: data/meter_round3_20261010
+train: images/train
+val: images/val
+names:
+  0: panel
+  1: needle
+  2: center_region

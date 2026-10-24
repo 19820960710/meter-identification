@@ -1,0 +1,4 @@
+# Lightweight packed/raw-head ONNX CPU baseline. No PyTorch required.
+numpy>=1.26,<3
+opencv-python-headless>=4.10,<6
+onnxruntime>=1.20,<2

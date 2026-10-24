@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+outputs/
+runs/
+*.log
+!evidence/x5-onnx-export.log
+.DS_Store
+Thumbs.db
+data/meter_round3_20261010/images/

@@ -1,0 +1,78 @@
+{
+  "source_weight_sha256": "40b1c77a30bcc6c5588e001408094ecbd57aa9de50a549d45e741cf75dc6431b",
+  "onnx_sha256": "206581f30e725d79571b400258aa21816990d553e4b8785d0e2197c2e1894e35",
+  "official_exporter_commit": "4f378d74fcf3507ba1336a14f5bf66bfecab2990",
+  "opset": 11,
+  "ir_version": 6,
+  "inputs": [
+    {
+      "name": "images",
+      "shape": [
+        1,
+        3,
+        640,
+        640
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "output0",
+      "shape": [
+        1,
+        80,
+        80,
+        3
+      ]
+    },
+    {
+      "name": "480",
+      "shape": [
+        1,
+        80,
+        80,
+        64
+      ]
+    },
+    {
+      "name": "494",
+      "shape": [
+        1,
+        40,
+        40,
+        3
+      ]
+    },
+    {
+      "name": "502",
+      "shape": [
+        1,
+        40,
+        40,
+        64
+      ]
+    },
+    {
+      "name": "516",
+      "shape": [
+        1,
+        20,
+        20,
+        3
+      ]
+    },
+    {
+      "name": "524",
+      "shape": [
+        1,
+        20,
+        20,
+        64
+      ]
+    }
+  ],
+  "output_protocol": "[cls_NHWC,box_NHWC] at strides 8,16,32; class logits (3 channels), box DFL logits (4x16=64 channels)",
+  "onnx_checker_passed": true,
+  "BPU_compiled": false,
+  "board_verified": false
+}

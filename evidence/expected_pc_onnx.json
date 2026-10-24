@@ -1,0 +1,71 @@
+{
+  "scope": "Historical frozen PC ONNX CPU outputs on already calibrated training/development originals, not physical truth",
+  "rows": [
+    {
+      "id": "128",
+      "status": "readable",
+      "value": 2.729247573745621,
+      "unit": "MPa"
+    },
+    {
+      "id": "121",
+      "status": "readable",
+      "value": 6.3130338048188746,
+      "unit": "MPa"
+    },
+    {
+      "id": "133",
+      "status": "readable",
+      "value": 6.16845913184413,
+      "unit": "MPa"
+    },
+    {
+      "id": "0",
+      "status": "readable",
+      "value": 0.3776190907509421,
+      "unit": "MPa"
+    },
+    {
+      "id": "790",
+      "status": "readable",
+      "value": 1.1041595646030495,
+      "unit": "kPa"
+    },
+    {
+      "id": "763",
+      "status": "readable",
+      "value": 6.323049800826774,
+      "unit": "MPa"
+    },
+    {
+      "id": "263",
+      "status": "readable",
+      "value": 6.218578797230811,
+      "unit": "MPa"
+    },
+    {
+      "id": "288",
+      "status": "readable",
+      "value": 1.1026408429836443,
+      "unit": "kPa"
+    },
+    {
+      "id": "5",
+      "status": "readable",
+      "value": 0.6053155537821511,
+      "unit": "MPa"
+    },
+    {
+      "id": "242",
+      "status": "readable",
+      "value": 6.252266644760238,
+      "unit": "MPa"
+    },
+    {
+      "id": "243",
+      "status": "readable",
+      "value": 1.0864851005382852,
+      "unit": "kPa"
+    }
+  ]
+}

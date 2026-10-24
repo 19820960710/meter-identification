@@ -1,0 +1,74 @@
+{
+  "model_id": "meter_labeler_v3",
+  "task": "detect",
+  "architecture": "Ultralytics YOLO11n",
+  "class_names": {
+    "0": "panel",
+    "1": "needle",
+    "2": "center_region"
+  },
+  "parameter_count": 2605369,
+  "stride": [
+    8,
+    16,
+    32
+  ],
+  "trained_at": "2026-10-10T22:03:31.001134+08:00",
+  "training_ultralytics_version": "8.4.175",
+  "training_epochs": 100,
+  "training_batch": 4,
+  "training_image_size": 640,
+  "initialization": "previous three-class meter_labeler_v2 checkpoint; not a fresh generic COCO initialization",
+  "dataset_images": 255,
+  "train_images": 248,
+  "development_val_images": 7,
+  "independent_test_set": false,
+  "best_checkpoint_metadata_metrics": {
+    "metrics/precision(B)": 0.89616,
+    "metrics/recall(B)": 0.9,
+    "metrics/mAP50(B)": 0.91731,
+    "metrics/mAP50-95(B)": 0.79926,
+    "val/box_loss": 0.70662,
+    "val/cls_loss": 0.46851,
+    "val/dfl_loss": 0.95906,
+    "fitness": 0.79926
+  },
+  "CSV_best_map50_95_epoch": 1,
+  "CSV_last_epoch_metrics": {
+    "epoch": "100",
+    "time": "610.532",
+    "train/box_loss": "0.36405",
+    "train/cls_loss": "0.25476",
+    "train/dfl_loss": "0.92584",
+    "metrics/precision(B)": "0.99278",
+    "metrics/recall(B)": "0.90903",
+    "metrics/mAP50(B)": "0.92833",
+    "metrics/mAP50-95(B)": "0.78469",
+    "val/box_loss": "0.68215",
+    "val/cls_loss": "0.35279",
+    "val/dfl_loss": "0.93135",
+    "lr/pg0": "2.84371e-05",
+    "lr/pg1": "2.84371e-05",
+    "lr/pg2": "2.84371e-05"
+  },
+  "metrics_scope": "Three-class object-detection metrics on 7 seen development images; not meter-reading accuracy or field performance.",
+  "checkpoint_epoch_field": -1,
+  "checkpoint_epoch_note": "Stripped deployment checkpoint stores epoch=-1; best epoch inferred from original CSV and checkpoint metrics.",
+  "pc_onnx": {
+    "opset": 17,
+    "ir_version": 8,
+    "input": "images float32 RGB NCHW [1,3,640,640] /255",
+    "output": "output0 [1,7,8400]: cx,cy,w,h plus three class probabilities",
+    "embedded_nms": false
+  },
+  "runtime_defaults": {
+    "confidence": 0.25,
+    "nms_iou": 0.45,
+    "max_det": 300,
+    "class_agnostic_nms": false,
+    "letterbox_pad": 114
+  },
+  "X5_bin_compiled": false,
+  "X5_board_verified": false,
+  "physical_field_accuracy_verified": false
+}

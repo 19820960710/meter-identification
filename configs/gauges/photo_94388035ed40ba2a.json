@@ -1,0 +1,64 @@
+{
+  "image_sha256": "94388035ed40ba2a3549ba8506ff3ed35ccfaa80cac9c7d57ff38babcd257ea2",
+  "image_size": [
+    450,
+    458
+  ],
+  "unit": "MPa",
+  "minimum_division": null,
+  "direction": "clockwise",
+  "scale_mode": "partial",
+  "needle_role": null,
+  "image": "samples/images/121.jpg",
+  "ticks": [
+    {
+      "value": 0.0,
+      "point": [
+        87.83592644978783,
+        326.9611111111111
+      ]
+    },
+    {
+      "value": 5.0,
+      "point": [
+        62.37623762376238,
+        185.10833333333335
+      ]
+    },
+    {
+      "value": 10.0,
+      "point": [
+        158.48656294200848,
+        71.88055555555556
+      ]
+    },
+    {
+      "value": 15.0,
+      "point": [
+        309.97171145685996,
+        88.41944444444445
+      ]
+    },
+    {
+      "value": 20.0,
+      "point": [
+        382.5318246110325,
+        224.54722222222225
+      ]
+    },
+    {
+      "value": 25.0,
+      "point": [
+        330.975954738331,
+        362.58333333333337
+      ]
+    }
+  ],
+  "source": "user_clicked_scale_lines_on_display_copy_mapped_to_original_without_prediction",
+  "candidate_id": "121",
+  "calibration_status": "user_points_saved_pending_reading_validation",
+  "minimum_division_source": "pending_separate_confirmation",
+  "note": "Scale capture only. No reference reading, detector, or numeric reader used.",
+  "original_profile_sha256": "387f39f0d69d0a4fe0545cdeee83a9a17cc3a422ac00a3e75e05ab1d08388b56",
+  "portability_note": "Only image path and provenance fields changed; original scale points and image bytes preserved."
+}

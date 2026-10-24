@@ -1,0 +1,5 @@
+# Original PT reader and 763 template experiment; separate from lightweight CPU.
+-r requirements.txt
+ultralytics==8.4.175
+onnx>=1.17,<2
+PyYAML>=6,<7

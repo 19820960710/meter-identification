@@ -1,0 +1,15 @@
+[Cauchy] Replaced Attention_forward in attn
+[Cauchy] Replaced Detect_forward in 23
+Ultralytics 8.4.175  Python-3.11.17 torch-2.10.0+cu128 CPU (AMD Ryzen 9 8945HX with Radeon Graphics)
+YOLO11n summary (fused): 101 layers, 2,597,537 parameters, 0 gradients, 6.4 GFLOPs
+
+PyTorch: starting from '$LOCAL_PATH (see export_info.json for portable protocol)
+
+ONNX: starting export with onnx 1.23.2 opset 11...
+ONNX: export success  0.6s, saved as '$LOCAL_PATH (see export_info.json for portable protocol)
+
+Export complete (0.9s)
+Results saved to $LOCAL_PATH (see export_info.json for portable protocol)
+Predict:         yolo predict task=detect model=$LOCAL_PATH (see export_info.json for portable protocol)
+Validate:        yolo val task=detect model=$LOCAL_PATH (see export_info.json for portable protocol)
+Visualize:       http$LOCAL_PATH (see export_info.json for portable protocol)

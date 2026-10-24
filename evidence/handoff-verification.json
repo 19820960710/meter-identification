@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-24",
+  "checks": {
+    "87_repository_tests_pass": true,
+    "16_float_detection_protocol_comparisons_pass": true,
+    "11_historical_cpu_values_reproduced": true,
+    "all_available_raw_head_numeric_statuses_match": true,
+    "four_original_template_values_preserved": true,
+    "original_model_and_source_protections_hold": true,
+    "all_portable_scale_points_preserved": true,
+    "core_geometry_source_byte_identical": true,
+    "quantization_set_has_32_images": true,
+    "no_BPU_or_board_completion_claim": true
+  },
+  "all_passed": true,
+  "tests_passed": 87,
+  "portable_profiles_checked": 12,
+  "protected_original_files": 54,
+  "BPU_verified": false,
+  "board_verified": false,
+  "max_float_export_box_difference_px": 9.1552734375e-05
+}

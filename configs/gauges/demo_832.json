@@ -1,0 +1,59 @@
+{
+  "image": "samples/images/832.jpg",
+  "image_sha256": "4f1da1f9d9007407d47eebb76b01dc7a51781ad59c544a5cc0ecf15496a9e419",
+  "image_size": [
+    735,
+    727
+  ],
+  "unit": "MPa",
+  "minimum_division": 0.5,
+  "direction": "clockwise",
+  "ticks": [
+    {
+      "value": 0,
+      "point": [
+        115,
+        520
+      ]
+    },
+    {
+      "value": 5,
+      "point": [
+        80,
+        274
+      ]
+    },
+    {
+      "value": 10,
+      "point": [
+        246,
+        81
+      ]
+    },
+    {
+      "value": 15,
+      "point": [
+        508,
+        109
+      ]
+    },
+    {
+      "value": 20,
+      "point": [
+        666,
+        357
+      ]
+    },
+    {
+      "value": 25,
+      "point": [
+        551,
+        599
+      ]
+    }
+  ],
+  "source": "visible_major_scale_line_endpoints_manually_digitized_from_demo_image",
+  "note": "Calibration is specific to this image. Approximate user reading is not an input.",
+  "original_profile_sha256": "035dd84d81e19ed3d00febbb3f3490af3642ce72e22b63d0d97b7294d37be71b",
+  "portability_note": "Only image path and provenance fields changed; manually digitized original scale points preserved."
+}

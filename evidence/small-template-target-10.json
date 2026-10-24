@@ -1,0 +1,28 @@
+{
+  "target_id": "10",
+  "target_status": "needs_review",
+  "target_value": null,
+  "unit": "MPa",
+  "target_numeric_candidates": 0,
+  "source_control_value": 0.378501563544041,
+  "known_H_control_value": 0.3776823665527609,
+  "source_controls_are_not_new_photos": true,
+  "source_user_estimate": 0.379,
+  "source_estimate_absolute_difference": 0.0004984364559589838,
+  "target_needle_direction_spread_degrees": 1.5412186437236697,
+  "target_mutual_static_matches": 41,
+  "target_fit_inliers": 27,
+  "target_holdout_count": 14,
+  "target_fit_hull_fraction": 0.2276466977215448,
+  "target_quality_failures": [
+    "inlier_coverage",
+    "unsupported_scale_anchors"
+  ],
+  "current_scope": "same-design seen-training-photo development; no accepted cross-photo reading and no physical accuracy claim",
+  "model_trained": false,
+  "original_profiles_changed": false,
+  "default_entry_changed": false,
+  "board_deployed": false,
+  "next_work": "Independent static-anchor evidence under needle occlusion, with higher-quality original observations where available; do not reduce spatial support thresholds or treat all matches as fit inliers.",
+  "verification_passed": true
+}

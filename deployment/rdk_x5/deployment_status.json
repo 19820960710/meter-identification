@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-24",
+  "platform": "RDK X5",
+  "model": "meter_labeler_v3",
+  "original_weights_preserved": true,
+  "x5_float_raw_head_onnx_exported": true,
+  "x5_float_onnx_checker_passed": true,
+  "cpu_float_export_parity_verified": true,
+  "bpu_compiled": false,
+  "quantization_accuracy_verified": false,
+  "board_runtime_verified": false,
+  "board_numeric_pipeline_integrated": false,
+  "camera_numeric_reading_verified": false,
+  "board_fps": null,
+  "physical_reading_accuracy": null,
+  "next_step": "Compile the supplied X5 floating ONNX in a matching x86 toolchain, then compare the exact same images on the board."
+}

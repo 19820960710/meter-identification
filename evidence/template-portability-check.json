@@ -1,0 +1,49 @@
+{
+  "scope": "PC PT CPU same-family training/development images only",
+  "rows": [
+    {
+      "id": "759",
+      "returncode": 0,
+      "status": "readable",
+      "value": 6.24208998063661,
+      "unit": "MPa",
+      "target_manual_profile_loaded": false,
+      "profiles_opened": [
+        "photo_13e7265b20639756.json"
+      ]
+    },
+    {
+      "id": "722",
+      "returncode": 0,
+      "status": "readable",
+      "value": 6.29608098269129,
+      "unit": "MPa",
+      "target_manual_profile_loaded": false,
+      "profiles_opened": [
+        "photo_13e7265b20639756.json"
+      ]
+    },
+    {
+      "id": "719",
+      "returncode": 0,
+      "status": "readable",
+      "value": 6.2834958213098115,
+      "unit": "MPa",
+      "target_manual_profile_loaded": false,
+      "profiles_opened": [
+        "photo_13e7265b20639756.json"
+      ]
+    },
+    {
+      "id": "832",
+      "returncode": 0,
+      "status": "readable",
+      "value": 6.313432828459869,
+      "unit": "MPa",
+      "target_manual_profile_loaded": false,
+      "profiles_opened": [
+        "photo_13e7265b20639756.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "images": [
+    {
+      "id": "128",
+      "image": "samples/images/128.jpg",
+      "image_sha256": "e97c177c7ab28763535f169c390bac6396f391779d3625e44ad34457def52e28",
+      "profile": "configs/gauges/photo_e97c177c7ab28763.json",
+      "source_file": "128_jpg.rf.0aca76c41a89db9bfb01827ef962fa43.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    },
+    {
+      "id": "121",
+      "image": "samples/images/121.jpg",
+      "image_sha256": "94388035ed40ba2a3549ba8506ff3ed35ccfaa80cac9c7d57ff38babcd257ea2",
+      "profile": "configs/gauges/photo_94388035ed40ba2a.json",
+      "source_file": "121_jpg.rf.df744bcacbedb33911748d9774e3805c.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    },
+    {
+      "id": "133",
+      "image": "samples/images/133.jpg",
+      "image_sha256": "737ba5e1f35bb9975f2492bd8754229295ff55c09dc081bd45c51799b92204a2",
+      "profile": "configs/gauges/photo_737ba5e1f35bb997.json",
+      "source_file": "133_jpg.rf.134a6dd4eaf0acd5beaa382aa88e0d50.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    },
+    {
+      "id": "0",
+      "image": "samples/images/0.jpg",
+      "image_sha256": "fae0688c1fa78bd78103d8baf36e8bf80e864b849bd86ba189f1caa472fd22bb",
+      "profile": "configs/gauges/photo_fae0688c1fa78bd7.json",
+      "source_file": "0_jpg.rf.05a8f0195be8a61b987eae747c19339f.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    },
+    {
+      "id": "790",
+      "image": "samples/images/790.jpg",
+      "image_sha256": "4c0d4a1cb23bf48ae58377029b50d3eb4700864f531652ab3317675d50e250cd",
+      "profile": "configs/gauges/photo_4c0d4a1cb23bf48a.json",
+      "source_file": "790_jpg.rf.3bc76cc8afba8b4f700b98017c536a82.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    },
+    {
+      "id": "763",
+      "image": "samples/images/763.jpg",
+      "image_sha256": "13e7265b20639756c506b6f692e0ee79d1eafe66e25f9808a6e94d1bea0e08f3",
+      "profile": "configs/gauges/photo_13e7265b20639756.json",
+      "source_file": "763_jpg.rf.8955b5f049e1e0b98b90a4611f06d889.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    },
+    {
+      "id": "263",
+      "image": "samples/images/263.jpg",
+      "image_sha256": "65d97ed7c13b5c8f1a255df6c9e35d0b5adc221550c993f420f84460bd5caddc",
+      "profile": "configs/gauges/photo_65d97ed7c13b5c8f.json",
+      "source_file": "263_jpg.rf.15cfa52485f19accf605381458d3bb7b.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    },
+    {
+      "id": "288",
+      "image": "samples/images/288.jpg",
+      "image_sha256": "1f906ac84d33261087735269e461bbc77855eec13bfa6928714698d0737c58c2",
+      "profile": "configs/gauges/photo_1f906ac84d332610.json",
+      "source_file": "288_jpg.rf.33425188169f04a7ad25e2f5b6bdae4e.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    },
+    {
+      "id": "5",
+      "image": "samples/images/5.jpg",
+      "image_sha256": "3697220cb97302876befa2ed1edae27b12abf94535c760995a92be65980f1892",
+      "profile": "configs/gauges/photo_3697220cb9730287.json",
+      "source_file": "5_jpg.rf.8ac45404cd2138a470136c4d4422d699.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    },
+    {
+      "id": "242",
+      "image": "samples/images/242.jpg",
+      "image_sha256": "e72566525f5d3e1efcaeea12d69c6be3dc1bd4cd64ab9b33ceb179f37b104af1",
+      "profile": "configs/gauges/photo_e72566525f5d3e1e.json",
+      "source_file": "242_jpg.rf.75f7336ebc439b39aa3e5eb9bc9079de.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    },
+    {
+      "id": "243",
+      "image": "samples/images/243.jpg",
+      "image_sha256": "bdf463d1ebda0ae1193e3cd9d1a18348b6863a8e658b70b1f317f9e98f3e055e",
+      "profile": "configs/gauges/photo_bdf463d1ebda0ae1.json",
+      "source_file": "243_jpg.rf.60160be6fec2860da474b400486f2ec3.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    },
+    {
+      "id": "759",
+      "image": "samples/images/759.jpg",
+      "image_sha256": "76b8789d48d637a7b72e385266abc6ed46d54bbdb1e6cb8d128f281b6a0711d9",
+      "profile": null,
+      "source_file": "759_jpg.rf.de6629f935c870abdf7b38f76d3a3c84.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    },
+    {
+      "id": "722",
+      "image": "samples/images/722.jpg",
+      "image_sha256": "2cf471b7b1ea3d2b51e0a1e485098ce8c73fd93cda4b57e502dbc399404afcbe",
+      "profile": null,
+      "source_file": "722_jpg.rf.85562fb678a0927458884d13ea6901a6.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    },
+    {
+      "id": "719",
+      "image": "samples/images/719.jpg",
+      "image_sha256": "3bbd49d794b8b0fa3b3cf5b4d6eaf52a7267a9337f315dc6db73f79ad1fb7b06",
+      "profile": null,
+      "source_file": "719_jpg.rf.276d533c291d56f1ca7d30734a62440e.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    },
+    {
+      "id": "10",
+      "image": "samples/images/10.jpg",
+      "image_sha256": "4f8c978c0dcfad3308548e9c4aca9c69f54f6584368501840914fdd9a645e2c8",
+      "profile": null,
+      "source_file": "10_jpg.rf.3cfdd44d070bd7c43ba3d284222e11a1.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    },
+    {
+      "id": "832",
+      "image": "samples/images/832.jpg",
+      "image_sha256": "4f1da1f9d9007407d47eebb76b01dc7a51781ad59c544a5cc0ecf15496a9e419",
+      "profile": "configs/gauges/demo_832.json",
+      "source_file": "832_jpg.rf.506a2a3b8309f3351f78488904befcee.jpg",
+      "source_dataset": "Roboflow gauge-key v1 / user-reviewed local export",
+      "development_only": true
+    }
+  ],
+  "not_independent_test_set": true,
+  "notes": "These originals overlap training/development sources; repeated runs do not establish physical accuracy."
+}

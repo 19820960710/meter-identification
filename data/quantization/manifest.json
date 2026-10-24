@@ -1,0 +1,230 @@
+{
+  "purpose": "Initial model quantization image statistics only; not dial scale clicking or independent evaluation",
+  "actual_camera_domain_representativeness_verified": false,
+  "images": [
+    {
+      "image": "data/quantization/images/000_0214d2cd9aa4.jpg",
+      "sha256": "0214d2cd9aa4b4567f58aec9a4966860a87a83946b995a5a299103a010a1435d",
+      "source_file": "241_jpg.rf.da7f31ec50f966ec0fb38f3e185dc2fa.jpg",
+      "visual_group": "black_rim_0_10_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/001_091e207e1c64.jpg",
+      "sha256": "091e207e1c6418fb36258bca7cc384b2817eb7d10d9b96b2916413b803509863",
+      "source_file": "296_jpg.rf.d08e9ca03d08097d64b606c10154aecb.jpg",
+      "visual_group": "black_rim_0_10_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/002_0922a4b2be9a.jpg",
+      "sha256": "0922a4b2be9a951432fd73507fa72ddb1b50db03b43e356662b653a8b2575488",
+      "source_file": "695_jpg.rf.dca9b2fa3b3c600c535ae149371d7c6f.jpg",
+      "visual_group": "black_rim_0_10_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/003_13e7aed5bb45.jpg",
+      "sha256": "13e7aed5bb4509cba012268b7cfe849561a45ed25fac2dd1524f78b68a9c9e08",
+      "source_file": "765_jpg.rf.e6f369e11ad683037e02f7afaeccc3a0.jpg",
+      "visual_group": "black_rim_0_10_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/004_094454a85d2a.jpg",
+      "sha256": "094454a85d2a1747b54a64fd7b294887ca13d361b71ea777a0aefb67d930e997",
+      "source_file": "751_jpg.rf.2b0805b3ead26b4f542c840b636740c5.jpg",
+      "visual_group": "capsule_0_1p6_kPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/005_1f906ac84d33.jpg",
+      "sha256": "1f906ac84d33261087735269e461bbc77855eec13bfa6928714698d0737c58c2",
+      "source_file": "288_jpg.rf.33425188169f04a7ad25e2f5b6bdae4e.jpg",
+      "visual_group": "capsule_0_1p6_kPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/006_42ceb705ee0c.jpg",
+      "sha256": "42ceb705ee0cc761a354182319727a084acb5ba8d983170a18204b0eaa4e7cdb",
+      "source_file": "718_jpg.rf.978eb2291fbf99e0470fe13678414996.jpg",
+      "visual_group": "capsule_0_1p6_kPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/007_4c0d4a1cb23b.jpg",
+      "sha256": "4c0d4a1cb23bf48ae58377029b50d3eb4700864f531652ab3317675d50e250cd",
+      "source_file": "790_jpg.rf.3bc76cc8afba8b4f700b98017c536a82.jpg",
+      "visual_group": "capsule_0_1p6_kPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/008_00b049822b18.jpg",
+      "sha256": "00b049822b18afabbbac160562b90ddba135d2e7910f22f6485e3b9754488f66",
+      "source_file": "240_jpg.rf.676ff48072df8728d6d3289acc0564c4.jpg",
+      "visual_group": "high_temperature_0_1p6_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/009_2314788b9259.jpg",
+      "sha256": "2314788b925915a53bc8188835b036404a8a9230d86db6ea4a1173291cf0f817",
+      "source_file": "235_jpg.rf.929432f1992be4ceea4ba37c32a34d63.jpg",
+      "visual_group": "high_temperature_0_1p6_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/010_3697220cb973.jpg",
+      "sha256": "3697220cb97302876befa2ed1edae27b12abf94535c760995a92be65980f1892",
+      "source_file": "5_jpg.rf.8ac45404cd2138a470136c4d4422d699.jpg",
+      "visual_group": "high_temperature_0_1p6_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/011_669eae91fb60.jpg",
+      "sha256": "669eae91fb60380f29c60ecc1bd07c93490498a675212970367ef725dbb5fdbb",
+      "source_file": "709_jpg.rf.9f1e979df41742db66ee48a28ad53e0d.jpg",
+      "visual_group": "high_temperature_0_1p6_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/012_130a9aa739cc.jpg",
+      "sha256": "130a9aa739ccaf577a5b1a3e8d13385f8bf760a7cf3f189975b4c8807e5ee79b",
+      "source_file": "146_jpg.rf.adc490f57fa835a18ec5793804be86f4.jpg",
+      "visual_group": "hongqi_0_25_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/013_13e7265b2063.jpg",
+      "sha256": "13e7265b20639756c506b6f692e0ee79d1eafe66e25f9808a6e94d1bea0e08f3",
+      "source_file": "763_jpg.rf.8955b5f049e1e0b98b90a4611f06d889.jpg",
+      "visual_group": "hongqi_0_25_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/014_15a896d1dd50.jpg",
+      "sha256": "15a896d1dd5066da1759297595bdd14b814e41c6de36626afed845017f648b27",
+      "source_file": "281_jpg.rf.64c97f666cd572ff952d3fe65bb84537.jpg",
+      "visual_group": "hongqi_0_25_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/015_1ee69e9778f1.jpg",
+      "sha256": "1ee69e9778f1b3e03ec524006eb9ff61539d4a2216fe406808948aa7f4044a36",
+      "source_file": "166_jpg.rf.d176fadb113b954f5ab5385ade59c142.jpg",
+      "visual_group": "hongqi_0_25_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/016_01e532eafb6b.jpg",
+      "sha256": "01e532eafb6bd9607e9d73be15109633c2f9da0009f095d4a55914fff5d04568",
+      "source_file": "78_png_jpg.rf.bf75a95f7c46f2db8c9c49e8f7e2999c.jpg",
+      "visual_group": "other_scene_or_design",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/017_0275bbfa91a9.jpg",
+      "sha256": "0275bbfa91a9b8197089b14f2b0eb46ed412c0c7b924f05144730cbdcbe5fe1e",
+      "source_file": "91342034-pressure-gauge-read-forty-psi-in-oil-and-gas-operation-_jpg.rf.3e92c9e5e24ec8769cb2f5ea34512966.jpg",
+      "visual_group": "other_scene_or_design",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/018_062625d46c5c.jpg",
+      "sha256": "062625d46c5ce23aaea4741999e9394ffc0b1a9ca8df4525592f7767c24077bd",
+      "source_file": "1000_F_293278425_x79S1F6V0UTNzYiqSbDdnB6MPlcfRHQE_jpg.rf.35e7acdddcf995ed1d69b27585ed2664.jpg",
+      "visual_group": "other_scene_or_design",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/019_0a714cbc7ada.jpg",
+      "sha256": "0a714cbc7adab0d1a9b58289cc38eef3877be2047fc4b980e0b0a57e6dfbb2ce",
+      "source_file": "76_png_jpg.rf.ae01eea7e842ecf85913b797df664715.jpg",
+      "visual_group": "other_scene_or_design",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/020_4f8c978c0dcf.jpg",
+      "sha256": "4f8c978c0dcfad3308548e9c4aca9c69f54f6584368501840914fdd9a645e2c8",
+      "source_file": "10_jpg.rf.3cfdd44d070bd7c43ba3d284222e11a1.jpg",
+      "visual_group": "small_0_0p6_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/021_fae0688c1fa7.jpg",
+      "sha256": "fae0688c1fa78bd78103d8baf36e8bf80e864b849bd86ba189f1caa472fd22bb",
+      "source_file": "0_jpg.rf.05a8f0195be8a61b987eae747c19339f.jpg",
+      "visual_group": "small_0_0p6_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/022_158e0d3af476.jpg",
+      "sha256": "158e0d3af476ffeb02061b71d228a4560fdeed7c0c14a445d30b3c1a877c43a5",
+      "source_file": "801_jpg.rf.0002d4b0407ec63f52b3f9e20a87bd1a.jpg",
+      "visual_group": "black_rim_0_10_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/023_23ce2a13cf47.jpg",
+      "sha256": "23ce2a13cf4726a11734ed823c3280c68dcc7d2f993256958804b8167a905454",
+      "source_file": "806_jpg.rf.83a780675b877244505d6cc8632d4c5d.jpg",
+      "visual_group": "hongqi_0_25_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/024_2509c2d08b4f.jpg",
+      "sha256": "2509c2d08b4fbd3f92d188932bc6197217102264256dd84b5a66e42da0f8ea69",
+      "source_file": "153_jpg.rf.cf3806cb86f580c51256d59f8b4606d8.jpg",
+      "visual_group": "hongqi_0_25_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/025_254f0c52e6aa.jpg",
+      "sha256": "254f0c52e6aa2e8fe8e3cf42caaba0fc82bb526f9c8407b385644226a0ed8def",
+      "source_file": "144_jpg.rf.89b28585f20b6dd6373394509b63dac1.jpg",
+      "visual_group": "hongqi_0_25_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/026_2654a2f774d2.jpg",
+      "sha256": "2654a2f774d2299221a0a5ed03b615679097f83d9b42c7515dfa769ede4fca27",
+      "source_file": "772_jpg.rf.17c90581654b49f413ad48634d6c3196.jpg",
+      "visual_group": "hongqi_0_25_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/027_27c1db8a0546.jpg",
+      "sha256": "27c1db8a05461b29cecf4c544319c8aeb3ba251208f3c9ebd9b2cd3d5e543425",
+      "source_file": "257_jpg.rf.cbd56bdfbef191e6ddbb9a5ee44d5896.jpg",
+      "visual_group": "hongqi_0_25_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/028_29ae0a8485a1.jpg",
+      "sha256": "29ae0a8485a1cf7774bfbadc35fc69451c9fa4be2e2dff0c8fdc9dd512cdce08",
+      "source_file": "59_png_jpg.rf.8d4de5598d32255d769565f6e101e457.jpg",
+      "visual_group": "other_scene_or_design",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/029_2cf471b7b1ea.jpg",
+      "sha256": "2cf471b7b1ea3d2b51e0a1e485098ce8c73fd93cda4b57e502dbc399404afcbe",
+      "source_file": "722_jpg.rf.85562fb678a0927458884d13ea6901a6.jpg",
+      "visual_group": "hongqi_0_25_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/030_2da05f81f51e.jpg",
+      "sha256": "2da05f81f51ec35776e76c8e16e796132c96ddf6173aa3d945abf61499561ca9",
+      "source_file": "294_jpg.rf.c9f48a1e98dbe6f47e27716f2ed22375.jpg",
+      "visual_group": "black_rim_0_10_MPa",
+      "round3_split": "train"
+    },
+    {
+      "image": "data/quantization/images/031_2ece036bb2f8.jpg",
+      "sha256": "2ece036bb2f895ce0d9d3908fdbb141d7fb9ee54408bff8a35b55c7179cc0438",
+      "source_file": "819_jpg.rf.3a65549085590d25355212dc60058af4.jpg",
+      "visual_group": "hongqi_0_25_MPa",
+      "round3_split": "train"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+type: yolo11
+name: meter_labeler_v3
+provider: Ultralytics
+display_name: Meter Labeler V3
+model_path: best.onnx
+conf_threshold: 0.25
+iou_threshold: 0.45
+max_det: 300
+agnostic: false
+classes:
+- panel
+- needle
+- center_region

@@ -1,0 +1,58 @@
+{
+  "image": "tests/fixtures/images/O1CN01juCxSJ1oCblXxhb03_!!2206921945189.webp",
+  "image_sha256": "bd22a1e4d6991d282d86e1fadad12bc034d34735c3df513febdd9afc5ead2ec1",
+  "image_size": [
+    800,
+    800
+  ],
+  "unit": "摄氏度",
+  "minimum_division": 2.0,
+  "direction": "clockwise",
+  "scale_mode": "partial",
+  "needle_role": null,
+  "ticks": [
+    {
+      "value": 0.0,
+      "point": [
+        449.0,
+        318.0
+      ]
+    },
+    {
+      "value": 20.0,
+      "point": [
+        422.0,
+        239.0
+      ]
+    },
+    {
+      "value": 40.0,
+      "point": [
+        468.0,
+        170.0
+      ]
+    },
+    {
+      "value": 60.0,
+      "point": [
+        551.0,
+        167.0
+      ]
+    },
+    {
+      "value": 80.0,
+      "point": [
+        603.0,
+        234.0
+      ]
+    },
+    {
+      "value": 100.0,
+      "point": [
+        579.0,
+        314.0
+      ]
+    }
+  ],
+  "source": "user_clicked_visible_scale_lines_for_this_image"
+}

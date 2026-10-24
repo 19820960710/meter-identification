@@ -1,0 +1,58 @@
+{
+  "image": "tests/fixtures/images/20210702123915383.jpg",
+  "image_sha256": "7e443834cf7841091293fd88dffb1692efab0fc1b041a8f65f14a392ae793890",
+  "image_size": [
+    1026,
+    972
+  ],
+  "unit": "MPa",
+  "minimum_division": 0.05,
+  "direction": "clockwise",
+  "scale_mode": "partial",
+  "needle_role": null,
+  "ticks": [
+    {
+      "value": 0.0,
+      "point": [
+        251.505,
+        714.42
+      ]
+    },
+    {
+      "value": 0.5,
+      "point": [
+        167.67,
+        441.04499999999996
+      ]
+    },
+    {
+      "value": 1.0,
+      "point": [
+        349.92,
+        185.89499999999998
+      ]
+    },
+    {
+      "value": 1.5,
+      "point": [
+        663.39,
+        179.82
+      ]
+    },
+    {
+      "value": 2.0,
+      "point": [
+        855.36,
+        432.53999999999996
+      ]
+    },
+    {
+      "value": 2.5,
+      "point": [
+        749.655,
+        729.0
+      ]
+    }
+  ],
+  "source": "user_clicked_visible_scale_lines_for_this_image"
+}

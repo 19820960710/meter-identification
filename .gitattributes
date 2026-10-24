@@ -1,0 +1,11 @@
+* text=auto eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.onnx binary
+*.pt binary
+*.jpg binary
+*.png binary
+# Preserve the pinned upstream exporter's original whitespace.
+third_party/rdk_x5_export_monkey_patch.py -whitespace

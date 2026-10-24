@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/D-Robotics/rdk_model_zoo",
+  "commit": "4f378d74fcf3507ba1336a14f5bf66bfecab2990",
+  "export_source": "samples/vision/ultralytics_yolo/conversion/export_monkey_patch.py",
+  "license": "Apache-2.0",
+  "modified": false
+}

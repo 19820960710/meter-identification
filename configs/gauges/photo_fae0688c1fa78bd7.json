@@ -1,0 +1,66 @@
+{
+  "image": "samples/images/0.jpg",
+  "image_sha256": "fae0688c1fa78bd78103d8baf36e8bf80e864b849bd86ba189f1caa472fd22bb",
+  "image_size": [
+    320,
+    240
+  ],
+  "unit": "MPa",
+  "minimum_division": 0.02,
+  "direction": "clockwise",
+  "ticks": [
+    {
+      "value": 0.0,
+      "point": [
+        76.0,
+        194.0
+      ]
+    },
+    {
+      "value": 0.1,
+      "point": [
+        60.0,
+        125.0
+      ]
+    },
+    {
+      "value": 0.2,
+      "point": [
+        96.0,
+        52.0
+      ]
+    },
+    {
+      "value": 0.3,
+      "point": [
+        174.0,
+        39.0
+      ]
+    },
+    {
+      "value": 0.4,
+      "point": [
+        235.0,
+        73.0
+      ]
+    },
+    {
+      "value": 0.5,
+      "point": [
+        261.0,
+        141.0
+      ]
+    },
+    {
+      "value": 0.6,
+      "point": [
+        226.0,
+        203.0
+      ]
+    }
+  ],
+  "source": "user_clicked_visible_scale_lines_for_this_image",
+  "minimum_division_source": "user_confirmed_2026-10-11",
+  "original_profile_sha256": "a598efcae74ed8518afc8aa704b975a46ed218983f8405f68cd26bf39f9bcfa0",
+  "portability_note": "Only image path and provenance fields changed; original scale points and image bytes preserved."
+}
