@@ -30,6 +30,6 @@ def run(image,prompt,config,folder,timeout):
     (folder/'vlm_stdout.log').write_text(stdout,encoding='utf-8')
     (folder/'vlm_stderr.log').write_text(stderr,encoding='utf-8')
     # ROS may keep a node alive after generation. Extract only an explicit JSON answer.
-    candidates=re.findall(r'\{[^{}]*"仪表类型"[^{}]*\}',stdout+'\n'+stderr,re.S)
+    candidates=re.findall(r'\{[^{}]*"(?:仪表类型|现场观察)"[^{}]*\}',stdout+'\n'+stderr,re.S)
     return {'candidate':candidates[-1] if candidates else None,'return_code':p.returncode,
             'timed_out':timed_out,'command_argv':args}
