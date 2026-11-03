@@ -3,6 +3,7 @@ import unittest
 import tempfile
 import io
 import threading
+from types import SimpleNamespace
 from pathlib import Path
 from unittest.mock import patch
 from validation import validate_model,assemble
@@ -11,6 +12,7 @@ from common import REPO,ROOT
 from routing import choose
 from validation import validate_scene
 from watch import StableImages,run_watch,listen_for_zero
+from internvl_x5_adapter import extract_answer_json,run as run_x5_vlm
 
 class TestX5Agent(unittest.TestCase):
     def test_existing_sha_profile(self):
@@ -70,5 +72,35 @@ class TestX5Agent(unittest.TestCase):
         with patch('sys.stdin',io.StringIO('0\n')):
             listen_for_zero(stop)
         self.assertTrue(stop.is_set())
+
+    def test_ros_answer_json_extraction_keeps_nested_content(self):
+        raw='回答如下：```json\n{"仪表类型":"压力表","类型依据":"表盘{圆形}","可核对性":"可见","表盘状态":"未见异常"}\n```'
+        obj=json.loads(extract_answer_json(raw))
+        self.assertEqual(obj['类型依据'],'表盘{圆形}')
+        self.assertIsNone(extract_answer_json('ROS日志：已完成，但没有结构化回答'))
+
+    def test_adapter_reads_private_final_topic_and_keeps_raw_answer(self):
+        with tempfile.TemporaryDirectory() as temp:
+            folder=Path(temp)
+            vit=folder/'vit_model_int16_v2.bin';vit.write_bytes(b'vit')
+            gguf=folder/'Qwen2.5-0.5B-Instruct-Q4_0.gguf';gguf.write_bytes(b'gguf')
+            answer='模型回答：{"仪表类型":"指针表","类型依据":"有指针","可核对性":"清晰","表盘状态":"未见异常"}'
+            topic='/vlm_agent_x5/result_abc'
+            class FakeProcess:
+                def __init__(self,stdout=None,code=None):
+                    self.stdout=stdout
+                    self.returncode=code
+                def poll(self):return self.returncode
+            listener=FakeProcess(io.StringIO('READY\n'+json.dumps({'topic':topic,'answer':answer},ensure_ascii=False)+'\n'),0)
+            model=FakeProcess(code=None)
+            with patch('internvl_x5_adapter.subprocess.Popen',side_effect=[listener,model]), \
+                 patch('internvl_x5_adapter.select.select',return_value=([listener.stdout],[],[])), \
+                 patch('internvl_x5_adapter.stop_group'), \
+                 patch('internvl_x5_adapter.uuid.uuid4',return_value=SimpleNamespace(hex='abc')):
+                result=run_x5_vlm(folder/'image.jpg','prompt',{'vit_bin':vit,'llm_gguf':gguf},folder,10)
+            self.assertEqual(result['result_topic'],topic)
+            self.assertEqual(result['raw_answer'],answer)
+            self.assertEqual(json.loads(result['candidate'])['仪表类型'],'指针表')
+            self.assertTrue((folder/'vlm_topic.json').is_file())
 
 if __name__=='__main__':unittest.main()
