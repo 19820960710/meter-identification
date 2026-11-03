@@ -1,0 +1,1 @@
+{"type":"object","required":["image"],"properties":{"image":{"type":"string","description":"图片绝对路径；历史图片不伪造采集时间"}},"additionalProperties":false}

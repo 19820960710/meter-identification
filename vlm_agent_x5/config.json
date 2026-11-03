@@ -1,0 +1,6 @@
+{
+  "output_dir": "outputs",
+  "yolo": {"model_path": "../models/annotation/meter_labeler_v3/best.onnx", "backend": "onnxruntime_cpu"},
+  "internvl": {"vit_bin": "models/vit_model_int16_v2.bin", "llm_gguf": "models/Qwen2.5-0.5B-Instruct-Q4_0.gguf", "backend": "hobot_llamacpp_ros2"},
+  "timeouts": {"yolo_seconds": 120, "vlm_seconds": 180}
+}
