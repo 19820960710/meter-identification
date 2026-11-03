@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "assets": {
+    "REPLACE_WITH_ASSET_ID": {
+      "enabled": false,
+      "point_id": "REPLACE_WITH_POINT_ID",
+      "profile_sha256": null,
+      "quantity": "pressure",
+      "unit": "bar",
+      "lower": null,
+      "upper": null,
+      "lower_inclusive": true,
+      "upper_inclusive": true,
+      "rule_source": "待提供实际设备标准或明确的演示规则来源",
+      "scope": "device_spec",
+      "operating_mode": null
+    }
+  }
+}

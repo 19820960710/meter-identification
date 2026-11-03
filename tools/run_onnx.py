@@ -11,9 +11,11 @@ import numpy as np
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
+sys.path.insert(0,str(ROOT/'tools'))
 import meter_reader as meter
 from calibration_binding import bind_detections
 from onnx_detector import preprocess,decode,raw_heads_to_packed
+from reading_range import attach
 
 
 def validate_profile(raw,image,profile):
@@ -94,6 +96,11 @@ def main():
     parser.add_argument('--profile',type=Path)
     parser.add_argument('--protocol',choices=['packed','raw-heads'],default='packed')
     parser.add_argument('--output',type=Path,default=ROOT/'outputs/onnx')
+    parser.add_argument('--rules',type=Path,default=ROOT/'configs/inspection_rules.json')
+    parser.add_argument('--asset-id')
+    parser.add_argument('--point-id')
+    parser.add_argument('--confirm-identity',action='store_true')
+    parser.add_argument('--operating-mode')
     args=parser.parse_args()
     args.output.mkdir(parents=True,exist_ok=True)
     try:
@@ -102,6 +109,12 @@ def main():
         (args.output/'annotated.jpg').write_bytes(cv2.imencode('.jpg',annotated)[1].tobytes())
     except (OSError,ValueError,KeyError,TypeError,RuntimeError,cv2.error) as error:
         result={'status':'needs_review','value':None,'reason':str(error),'backend':'onnxruntime_cpu'}
+    profile_sha=None
+    if args.profile and args.profile.is_file():
+        profile_sha=hashlib.sha256(args.profile.read_bytes()).hexdigest()
+    result=attach(result,args.rules,asset_id=args.asset_id,point_id=args.point_id,
+                  identity_confirmed=args.confirm_identity,profile_sha256=profile_sha,
+                  operating_mode=args.operating_mode)
     text=json.dumps(result,ensure_ascii=False,indent=2,allow_nan=False)
     (args.output/'result.json').write_text(text,encoding='utf-8')
     print(text)
