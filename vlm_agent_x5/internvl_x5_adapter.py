@@ -21,6 +21,14 @@ def run(image,prompt,config,folder,timeout):
                        text=True,start_new_session=True)
     timed_out=False
     try:stdout,stderr=p.communicate(timeout=timeout)
+    except KeyboardInterrupt:
+        # A manually stopped watch session must not leave the ROS model running.
+        if p.poll() is None:
+            os.killpg(p.pid,signal.SIGTERM)
+            try:p.communicate(timeout=5)
+            except subprocess.TimeoutExpired:
+                os.killpg(p.pid,signal.SIGKILL);p.communicate()
+        raise
     except subprocess.TimeoutExpired:
         timed_out=True
         os.killpg(p.pid,signal.SIGTERM)

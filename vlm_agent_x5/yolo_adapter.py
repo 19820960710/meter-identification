@@ -21,14 +21,19 @@ def run(image,folder,config,timeout):
     cmd=[sys.executable,str(REPO/'tools/run_onnx.py'),'--image',str(image),
          '--model',str(config['model_path']),'--output',str(folder/'yolo')]
     if profile:cmd+=['--profile',str(profile)]
+    p=subprocess.Popen(cmd,cwd=REPO,stdout=subprocess.PIPE,stderr=subprocess.PIPE,
+                       text=True,encoding='utf-8',errors='replace')
     try:
-        p=subprocess.run(cmd,cwd=REPO,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=timeout)
-        stdout,stderr=p.stdout,p.stderr
+        stdout,stderr=p.communicate(timeout=timeout)
         code=p.returncode
-    except subprocess.TimeoutExpired as exc:
-        stdout=(exc.stdout or b'').decode(errors='replace') if isinstance(exc.stdout,bytes) else exc.stdout or ''
-        stderr=(exc.stderr or b'').decode(errors='replace') if isinstance(exc.stderr,bytes) else exc.stderr or ''
+    except subprocess.TimeoutExpired:
+        p.kill()
+        stdout,stderr=p.communicate()
         code=None
+    except KeyboardInterrupt:
+        p.kill()
+        p.communicate()
+        raise
     (folder/'yolo_stdout.log').write_text(stdout,encoding='utf-8')
     (folder/'yolo_stderr.log').write_text(stderr,encoding='utf-8')
     result_path=folder/'yolo/result.json'

@@ -13,39 +13,28 @@ from internvl_x5_adapter import run as run_vlm
 from validation import validate_model,assemble,validate_scene
 from preflight import check as check_env
 from routing import choose as choose_mode
+from watch import run_watch, digest
 
-def main():
-    p=argparse.ArgumentParser(description='RDK X5 仪表图像观察 Agent')
-    p.add_argument('--image',help='图片路径；与--request二选一')
-    p.add_argument('--request',help='输入JSON路径；与--image二选一')
-    p.add_argument('--config',default=str(ROOT/'config.json'))
-    p.add_argument('--check-env',action='store_true',help='只检查板端环境，不调用YOLO或VLM')
-    a=p.parse_args()
-    cfg=json.loads(Path(a.config).read_text(encoding='utf-8-sig'))
-    if a.check_env:
-        status=check_env(cfg)
-        output=resolve(cfg['output_dir']);output.mkdir(parents=True,exist_ok=True)
-        save(output/'环境检查.json',status)
-        print(json.dumps(status,ensure_ascii=False,indent=2))
-        print('环境检查记录：'+str(output/'环境检查.json'))
-        return 0 if status['ready'] else 2
-    if bool(a.image)==bool(a.request):p.error('必须且只能指定--image或--request')
-    req=json.loads(Path(a.request).read_text(encoding='utf-8-sig')) if a.request else {'image':a.image}
-    if not isinstance(req,dict) or set(req)!={'image'} or not isinstance(req['image'],str):
-        p.error('输入JSON只能包含字符串image字段')
-    image=Path(req['image']).expanduser().resolve()
-    if not image.is_file():p.error('图片不存在：'+str(image))
-    if any(type(cfg['timeouts'][k]) is not int or cfg['timeouts'][k]<=0 for k in ('yolo_seconds','vlm_seconds')):
-        p.error('超时必须是正整数秒')
+def process_one(image,cfg,config_path,req=None,expected_sha=None):
+    image=Path(image).expanduser().resolve()
+    if not image.is_file():raise FileNotFoundError('图片不存在：'+str(image))
     output=resolve(cfg['output_dir']);output.mkdir(parents=True,exist_ok=True)
     ident=datetime.now().strftime('%Y%m%d_%H%M%S')+'_'+uuid.uuid4().hex[:8]
     folder=output/ident;folder.mkdir()
-    shutil.copy2(image,folder/('input'+image.suffix.lower()))
-    save(folder/'input.json',{'image':str(image),'imported_at':datetime.now(timezone.utc).isoformat(),
-                              'config':str(Path(a.config).resolve()),'request':req})
+    snapshot=folder/('input'+image.suffix.lower())
+    original_image=image
+    req=req or {'image':str(image)}
     result={'run_id':ident,'status':'running','mode':None,'four_items':None,'scene_items':None,'yolo':None,'vlm':None,'errors':[]}
-    save(folder/'env_check.json',check_env(cfg))
     try:
+        shutil.copy2(image,snapshot)
+        snapshot_sha=digest(snapshot)
+        if expected_sha and snapshot_sha!=expected_sha:
+            raise ValueError('图片复制时内容发生变化，跳过本次处理；文件稳定后可重新检测')
+        save(folder/'input.json',{'image':str(original_image),'snapshot':str(snapshot),
+                                  'sha256':snapshot_sha,'imported_at':datetime.now(timezone.utc).isoformat(),
+                                  'config':str(Path(config_path).resolve()),'request':req})
+        save(folder/'env_check.json',check_env(cfg))
+        image=snapshot
         ycfg={'model_path':resolve(cfg['yolo']['model_path'])}
         yolo=run_yolo(image,folder,ycfg,cfg['timeouts']['yolo_seconds'])
         result['yolo']=yolo
@@ -90,10 +79,53 @@ def main():
         result['status']='completed' if model and (result['mode']=='scene' or yolo['raw'].get('status')=='readable') else 'partial'
     except Exception as exc:
         result['errors'].append('流程：'+repr(exc));result['status']='failed'
+    except KeyboardInterrupt:
+        result['errors'].append('流程：手动中断');result['status']='interrupted'
+        raise
     finally:
         save(folder/'result.json',result)
         (folder/'agent.log').write_text('\n'.join(result['errors']) or '流程完成；原始子进程日志见同目录。',encoding='utf-8')
     print('结果：'+str(folder/'result.json'))
     print(json.dumps(result['four_items'] or result['scene_items'],ensure_ascii=False,indent=2) if result['four_items'] or result['scene_items'] else result['status'])
-    return 0 if result['status']=='completed' else 2
+    return {'status':result['status'],'result':str(folder/'result.json'),'run_id':ident}
+
+def main():
+    p=argparse.ArgumentParser(description='RDK X5 仪表图像观察 Agent')
+    group=p.add_mutually_exclusive_group()
+    group.add_argument('--image',help='处理一张图片')
+    group.add_argument('--request',help='单图输入JSON路径')
+    group.add_argument('--watch-folder',help='持续监听文件夹中新写入或修改的图片')
+    p.add_argument('--config',default=str(ROOT/'config.json'))
+    p.add_argument('--check-env',action='store_true',help='只检查板端环境，不调用YOLO或VLM')
+    p.add_argument('--poll-seconds',type=float,default=1.0,help='监听轮询间隔，默认1秒')
+    p.add_argument('--stable-seconds',type=float,default=1.5,help='文件未变化后等待秒数，默认1.5秒')
+    a=p.parse_args()
+    cfg=json.loads(Path(a.config).read_text(encoding='utf-8-sig'))
+    if a.check_env:
+        status=check_env(cfg)
+        output=resolve(cfg['output_dir']);output.mkdir(parents=True,exist_ok=True)
+        save(output/'环境检查.json',status)
+        print(json.dumps(status,ensure_ascii=False,indent=2))
+        print('环境检查记录：'+str(output/'环境检查.json'))
+        return 0 if status['ready'] else 2
+    if not (a.image or a.request or a.watch_folder):p.error('请指定--image、--request或--watch-folder')
+    if any(type(cfg['timeouts'][k]) is not int or cfg['timeouts'][k]<=0 for k in ('yolo_seconds','vlm_seconds')):
+        p.error('超时必须是正整数秒')
+    if a.watch_folder:
+        if a.poll_seconds<=0 or a.stable_seconds<0:p.error('监听时间参数无效')
+        output=resolve(cfg['output_dir'])
+        ident='watch_'+datetime.now().strftime('%Y%m%d_%H%M%S')+'_'+uuid.uuid4().hex[:8]
+        session_folder=output/ident
+        import threading
+        from watch import listen_for_zero
+        stop=threading.Event()
+        threading.Thread(target=listen_for_zero,args=(stop,),daemon=True).start()
+        run_watch(a.watch_folder,session_folder,
+                  lambda path,sha:process_one(path,cfg,a.config,expected_sha=sha),
+                  a.poll_seconds,a.stable_seconds,stop)
+        return 0
+    req=json.loads(Path(a.request).read_text(encoding='utf-8-sig')) if a.request else {'image':a.image}
+    if not isinstance(req,dict) or set(req)!={'image'} or not isinstance(req['image'],str):
+        p.error('输入JSON只能包含字符串image字段')
+    return 0 if process_one(req['image'],cfg,a.config,req)['status']=='completed' else 2
 if __name__=='__main__':sys.exit(main())

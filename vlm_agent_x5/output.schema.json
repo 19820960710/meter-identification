@@ -18,7 +18,8 @@
       "enum": [
         "completed",
         "partial",
-        "failed"
+        "failed",
+        "interrupted"
       ]
     },
     "four_items": {
